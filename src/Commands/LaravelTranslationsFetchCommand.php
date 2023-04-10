@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class LaravelTranslationsFetchCommand extends Command
 {
     public Collection $translationKeys;
+
     public Collection $translationDB;
 
     public $signature = 'translations:fetch';
@@ -33,12 +34,11 @@ class LaravelTranslationsFetchCommand extends Command
         $this->updateTranslations();
         $this->cleanOldTranslations();
 
-        $this->info('Translation Keys: ' . $this->translationKeys->count());
+        $this->info('Translation Keys: '.$this->translationKeys->count());
         $this->comment('All done');
 
         return self::SUCCESS;
     }
-
 
     protected function scanForTranslations(Collection $files): void
     {
@@ -52,7 +52,7 @@ class LaravelTranslationsFetchCommand extends Command
                     $match = trim($match, "'");
                     if (! $this->translationKeys->has($match)) {
                         $this->translationKeys->put($match, [$file]);
-                    }else {
+                    } else {
                         $this->translationKeys->put(
                             $match,
                             array_merge($this->translationKeys->get($match), [$file])

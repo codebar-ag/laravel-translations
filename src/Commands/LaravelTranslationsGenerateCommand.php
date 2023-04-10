@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class LaravelTranslationsGenerateCommand extends Command
 {
     public Collection $translationKeys;
+
     public Collection $translationDB;
 
     public $signature = 'translations:generate';
@@ -30,13 +31,13 @@ class LaravelTranslationsGenerateCommand extends Command
 
             if (! $files->has($locale)) {
                 $files->put($locale, [
-                    $translation->translation->key => $translation->value
+                    $translation->translation->key => $translation->value,
                 ]);
-            }else {
+            } else {
                 $files->put(
                     $locale,
                     array_merge($files->get($locale), [
-                        $translation->translation->key => $translation->value
+                        $translation->translation->key => $translation->value,
                     ])
                 );
             }
@@ -44,7 +45,6 @@ class LaravelTranslationsGenerateCommand extends Command
 
         $this->saveAsJson($files);
         $this->saveAsPHP($files);
-
 
         $this->comment('All done');
 
@@ -74,7 +74,7 @@ class LaravelTranslationsGenerateCommand extends Command
 
         // Create a file in the resources/lang folder with the filename of the locale and the content of the array
         $files->each(function ($file, $locale) use ($disk) {
-            $content = "<?php" . PHP_EOL . PHP_EOL . "return " . var_export($file, true) . ";";
+            $content = '<?php'.PHP_EOL.PHP_EOL.'return '.var_export($file, true).';';
 
             // replace array ( with [
             $content = preg_replace('/array \(/', '[', $content);

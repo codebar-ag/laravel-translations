@@ -4,8 +4,6 @@ namespace CodebarAG\LaravelTranslations\Nova;
 
 use CodebarAG\LaravelTranslations\Models\Translation as TranslationModel;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
@@ -20,7 +18,7 @@ class Translation extends Resource
     public static $title = 'key';
 
     public static $search = [
-        ''
+        '',
     ];
 
     public function fields(Request $request): array
@@ -38,7 +36,7 @@ class Translation extends Resource
                 return implode(PHP_EOL, $this->files);
             })->alwaysShow(),
 
-            HasMany::make('Translation Values', 'values', TranslationValue::class)
+            HasMany::make('Translation Values', 'values', TranslationValue::class),
         ];
     }
 
