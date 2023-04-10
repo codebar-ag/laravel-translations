@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="2" assertions="7" errors="0" failures="0" skipped="0" time="0.036773">
+    <testsuite name="CodebarAG Test Suite" tests="2" assertions="7" errors="0" failures="0" skipped="0" time="0.036773">
+      <testsuite name="P\Tests\ExampleTest" file="/Users/rhyslees/Code/Codebar/temp/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.005243">
+        <testcase name="__pest_evaluable_it_can_test" file="/Users/rhyslees/Code/Codebar/temp/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ExampleTest" classname="P.Tests.ExampleTest" assertions="1" time="0.005243"/>
+      </testsuite>
+      <testsuite name="P\Tests\ArchTest" file="/Users/rhyslees/Code/Codebar/temp/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="6" errors="0" failures="0" skipped="0" time="0.031530">
+        <testcase name="__pest_evaluable_it_will_not_use_debugging_functions" file="/Users/rhyslees/Code/Codebar/temp/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ArchTest" classname="P.Tests.ArchTest" assertions="6" time="0.031530"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,9 +1,9 @@
 # This is my package laravel-translations
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/laravel-translations.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-translations)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/codebar-ag/laravel-translations/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/codebar-ag/laravel-translations/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/codebar-ag/laravel-translations/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/codebar-ag/laravel-translations/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-translations.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-translations)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebarag/laravel-translations.svg?style=flat-square)](https://packagist.org/packages/codebarag/laravel-translations)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/codebarag/laravel-translations/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/codebarag/laravel-translations/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/codebarag/laravel-translations/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/codebarag/laravel-translations/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/codebarag/laravel-translations.svg?style=flat-square)](https://packagist.org/packages/codebarag/laravel-translations)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -20,7 +20,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require codebar-ag/laravel-translations
+composer require codebarag/laravel-translations
 ```
 
 You can publish and run the migrations with:
@@ -52,8 +52,8 @@ php artisan vendor:publish --tag="laravel-translations-views"
 ## Usage
 
 ```php
-$laravelTranslations = new Codebarag\LaravelTranslations();
-echo $laravelTranslations->echoPhrase('Hello, Codebarag!');
+$laravelTranslations = new CodebarAG\LaravelTranslations();
+echo $laravelTranslations->echoPhrase('Hello, CodebarAG!');
 ```
 
 ## Testing
@@ -76,7 +76,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Rhys Lees](https://github.com/codebar-ag)
+- [Rhys Lees](https://github.com/CodebarAG)
 - [All Contributors](../../contributors)
 
 ## License

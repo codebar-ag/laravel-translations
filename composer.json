@@ -1,12 +1,12 @@
 {
-    "name": "codebar-ag/laravel-translations",
+    "name": "codebarag/laravel-translations",
     "description": "This is my package laravel-translations",
     "keywords": [
-        "codebar-ag",
+        "CodebarAG",
         "laravel",
         "laravel-translations"
     ],
-    "homepage": "https://github.com/codebar-ag/laravel-translations",
+    "homepage": "https://github.com/codebarag/laravel-translations",
     "license": "MIT",
     "authors": [
         {
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Codebarag\\LaravelTranslations\\": "src/",
-            "Codebarag\\LaravelTranslations\\Database\\Factories\\": "database/factories/"
+            "CodebarAG\\LaravelTranslations\\": "src/",
+            "CodebarAG\\LaravelTranslations\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Codebarag\\LaravelTranslations\\Tests\\": "tests/"
+            "CodebarAG\\LaravelTranslations\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Codebarag\\LaravelTranslations\\LaravelTranslationsServiceProvider"
+                "CodebarAG\\LaravelTranslations\\LaravelTranslationsServiceProvider"
             ],
             "aliases": {
-                "LaravelTranslations": "Codebarag\\LaravelTranslations\\Facades\\LaravelTranslations"
+                "LaravelTranslations": "CodebarAG\\LaravelTranslations\\Facades\\LaravelTranslations"
             }
         }
     },
