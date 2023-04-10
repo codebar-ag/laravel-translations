@@ -2,7 +2,11 @@
 
 namespace CodebarAG\LaravelTranslations;
 
-use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsCommand;
+use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
+use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsGenerateCommand;
+use CodebarAG\LaravelTranslations\Nova\Translation;
+use CodebarAG\LaravelTranslations\Nova\TranslationValue;
+use Laravel\Nova\Nova;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -19,7 +23,21 @@ class LaravelTranslationsServiceProvider extends PackageServiceProvider
             ->name('laravel-translations')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-translations_table')
-            ->hasCommand(LaravelTranslationsCommand::class);
+            ->hasMigrations(
+                'create_laravel-translations_table',
+                'create_laravel-translation-values_table'
+            )
+            ->hasCommands(
+                LaravelTranslationsFetchCommand::class,
+                LaravelTranslationsGenerateCommand::class
+            );
+    }
+
+    public function packageRegistered()
+    {
+        Nova::resources([
+            Translation::class,
+            TranslationValue::class,
+        ]);
     }
 }

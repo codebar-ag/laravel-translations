@@ -8,12 +8,14 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('laravel_translations_table', function (Blueprint $table) {
+        Schema::create('laravel_translations', function (Blueprint $table) {
             $table->id();
 
-            // add fields
+            $table->text('key');
+            $table->json('files')->nullable();
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 };
