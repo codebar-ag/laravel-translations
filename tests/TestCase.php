@@ -2,9 +2,9 @@
 
 namespace CodebarAG\LaravelTranslations\Tests;
 
+use CodebarAG\LaravelTranslations\LaravelTranslationsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CodebarAG\LaravelTranslations\LaravelTranslationsServiceProvider;
 
 class TestCase extends Orchestra
 {

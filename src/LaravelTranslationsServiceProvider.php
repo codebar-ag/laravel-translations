@@ -2,9 +2,9 @@
 
 namespace CodebarAG\LaravelTranslations;
 
+use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsCommand;
 
 class LaravelTranslationsServiceProvider extends PackageServiceProvider
 {
