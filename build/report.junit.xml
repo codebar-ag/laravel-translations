@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="2" assertions="7" errors="0" failures="1" skipped="0" time="0.111319">
-    <testsuite name="CodebarAG Test Suite" tests="2" assertions="7" errors="0" failures="1" skipped="0" time="0.111319">
-      <testsuite name="P\Tests\ArchTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="6" errors="0" failures="1" skipped="0" time="0.108905">
-        <testcase name="__pest_evaluable_it_will_not_use_debugging_functions" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ArchTest" classname="P.Tests.ArchTest" assertions="6" time="0.108905">
+  <testsuite name="" tests="2" assertions="7" errors="0" failures="1" skipped="0" time="0.113600">
+    <testsuite name="CodebarAG Test Suite" tests="2" assertions="7" errors="0" failures="1" skipped="0" time="0.113600">
+      <testsuite name="P\Tests\ArchTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="6" errors="0" failures="1" skipped="0" time="0.111333">
+        <testcase name="__pest_evaluable_it_will_not_use_debugging_functions" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ArchTest" classname="P.Tests.ArchTest" assertions="6" time="0.111333">
           <failure type="Pest\Arch\Exceptions\ArchExpectationFailedException">P\Tests\ArchTest::__pest_evaluable_it_will_not_use_debugging_functions
 Expecting 'ray' not to be used on 'CodebarAG\LaravelTranslations\Commands\LaravelTranslationsFetchCommand'.
 
-/Users/rhyslees/Code/Codebar/laravel-translations/src/Commands/LaravelTranslationsFetchCommand.php:37
+/Users/rhyslees/Code/Codebar/laravel-translations/src/Commands/LaravelTranslationsFetchCommand.php:81
 /Users/rhyslees/Code/Codebar/laravel-translations/tests/ArchTest.php:5
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest-plugin-arch/src/Blueprint.php:138
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest-plugin-arch/src/Expectations/ToOnlyBeUsedIn.php:42
@@ -29,8 +29,8 @@ Expecting 'ray' not to be used on 'CodebarAG\LaravelTranslations\Commands\Larave
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/bin/pest:99</failure>
         </testcase>
       </testsuite>
-      <testsuite name="P\Tests\ExampleTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.002414">
-        <testcase name="__pest_evaluable_it_can_test" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ExampleTest" classname="P.Tests.ExampleTest" assertions="1" time="0.002414"/>
+      <testsuite name="P\Tests\ExampleTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.002267">
+        <testcase name="__pest_evaluable_it_can_test" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ExampleTest" classname="P.Tests.ExampleTest" assertions="1" time="0.002267"/>
       </testsuite>
     </testsuite>
   </testsuite>
