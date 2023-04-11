@@ -21,6 +21,8 @@ class LaravelTranslationsFetch
     {
         $this->locale = $locale;
 
+        ray($this->locale);
+
         $disk = Storage::build([
             'driver' => 'local',
             'root' => base_path(),
@@ -31,6 +33,8 @@ class LaravelTranslationsFetch
                 collect($disk->allFiles($directory))
             );
         }
+
+        ray($this->translationKeys);
 
         $this->saveAsJson();
 

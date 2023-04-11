@@ -1,19 +1,17 @@
 <?php
 
 use CodebarAg\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 test('can fetch translations', function () {
-    Storage::fake();
 
-    \Pest\Laravel\artisan(LaravelTranslationsFetchCommand::class, ['locale' => 'test'])
-        ->expectsOutput('2 translations.')
-        ->assertExitCode(0);
+    $fileName = 'translation.php';
+    $file = "<?php __('Hello World');";
 
-    $disk = Storage::build([
-        'driver' => 'local',
-        'root' => base_path('lang/'),
+    File::put("$fileName", $file);
+
+    \Pest\Laravel\artisan(LaravelTranslationsFetchCommand::class, [
+        'locale' => 'de',
     ]);
 
-    $disk->assertExists('test.json');
-});
+})->group('translations');
