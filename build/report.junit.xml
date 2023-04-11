@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="3" assertions="5" errors="1" failures="0" skipped="0" time="0.104862">
-    <testsuite name="CodebarAG Test Suite" tests="3" assertions="5" errors="1" failures="0" skipped="0" time="0.104862">
-      <testsuite name="P\Tests\Feature\FetchCommandTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="1" errors="1" failures="0" skipped="0" time="0.054878">
-        <testcase name="__pest_evaluable_can_fetch_translations" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\Feature\FetchCommandTest" classname="P.Tests.Feature.FetchCommandTest" assertions="1" time="0.054878">
+  <testsuite name="" tests="3" assertions="5" errors="1" failures="0" skipped="0" time="0.107473">
+    <testsuite name="CodebarAG Test Suite" tests="3" assertions="5" errors="1" failures="0" skipped="0" time="0.107473">
+      <testsuite name="P\Tests\ExampleTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.009376">
+        <testcase name="__pest_evaluable_it_can_test" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ExampleTest" classname="P.Tests.ExampleTest" assertions="1" time="0.009376"/>
+      </testsuite>
+      <testsuite name="P\Tests\ArchTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.049914">
+        <testcase name="__pest_evaluable_it_will_not_use_debugging_functions" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ArchTest" classname="P.Tests.ArchTest" assertions="3" time="0.049914"/>
+      </testsuite>
+      <testsuite name="P\Tests\Feature\FetchCommandTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="1" errors="1" failures="0" skipped="0" time="0.048182">
+        <testcase name="__pest_evaluable_can_fetch_translations" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\Feature\FetchCommandTest" classname="P.Tests.Feature.FetchCommandTest" assertions="1" time="0.048182">
           <error type="Illuminate\Contracts\Filesystem\FileNotFoundException">P\Tests\Feature\FetchCommandTest::__pest_evaluable_can_fetch_translations
 Illuminate\Contracts\Filesystem\FileNotFoundException: File does not exist at path app/.gitkeep.
 
@@ -30,7 +36,7 @@ Illuminate\Contracts\Filesystem\FileNotFoundException: File does not exist at pa
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php:381
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/laravel/framework/src/Illuminate/Testing/PendingCommand.php:296
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/laravel/framework/src/Illuminate/Testing/PendingCommand.php:481
-/Users/rhyslees/Code/Codebar/laravel-translations/tests/Feature/FetchCommandTest.php:11
+/Users/rhyslees/Code/Codebar/laravel-translations/tests/Feature/FetchCommandTest.php:12
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php:100
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Concerns/Testable.php:302
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Support/ExceptionTrace.php:28
@@ -41,12 +47,6 @@ Illuminate\Contracts\Filesystem\FileNotFoundException: File does not exist at pa
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/bin/pest:91
 /Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/bin/pest:99</error>
         </testcase>
-      </testsuite>
-      <testsuite name="P\Tests\ExampleTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.003880">
-        <testcase name="__pest_evaluable_it_can_test" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ExampleTest" classname="P.Tests.ExampleTest" assertions="1" time="0.003880"/>
-      </testsuite>
-      <testsuite name="P\Tests\ArchTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="3" errors="0" failures="0" skipped="0" time="0.046104">
-        <testcase name="__pest_evaluable_it_will_not_use_debugging_functions" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ArchTest" classname="P.Tests.ArchTest" assertions="3" time="0.046104"/>
       </testsuite>
     </testsuite>
   </testsuite>
