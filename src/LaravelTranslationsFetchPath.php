@@ -27,7 +27,7 @@ class LaravelTranslationsFetchPath
             collect($disk->allFiles())
         );
 
-        #$this->updateTranslations();
+        //$this->updateTranslations();
 
         ray($this->translationKeys);
 
@@ -44,7 +44,7 @@ class LaravelTranslationsFetchPath
             if (preg_match_all($pattern, $content, $matches)) {
                 foreach ($matches[1] as $match) {
                     $match = trim($match, "'");
-                    if (!$this->translationKeys->has($match)) {
+                    if (! $this->translationKeys->has($match)) {
                         $this->translationKeys->put($match, [$file]);
                     } else {
                         $this->translationKeys->put(
@@ -75,7 +75,7 @@ class LaravelTranslationsFetchPath
             if ($translation->wasRecentlyCreated) {
                 $translation->values()->createMany([
                     'locale' => config('translations.default_locale'),
-                    'value' => $key
+                    'value' => $key,
                 ]);
             }
         });
@@ -85,7 +85,7 @@ class LaravelTranslationsFetchPath
     {
         // compare the translation keys with the translation db and if the key is not in the translation keys, delete it from the db
         $this->translationDB->each(function ($key) {
-            if (!$this->translationKeys->has($key)) {
+            if (! $this->translationKeys->has($key)) {
                 Translation::where('key', $key)->delete();
             }
         });

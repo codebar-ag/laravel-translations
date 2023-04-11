@@ -52,6 +52,6 @@ class LaravelTranslationsFetch
             'root' => base_path('lang/testing/json/lang'),
         ]);
 
-        $disk->put(config('translations.default_locale') . ".json", $this->translationKeys->sortKeys()->toJson(JSON_PRETTY_PRINT));
+        $disk->put(config('translations.default_locale').'.json', $this->translationKeys->sortKeys()->toJson(JSON_PRETTY_PRINT));
     }
 }
