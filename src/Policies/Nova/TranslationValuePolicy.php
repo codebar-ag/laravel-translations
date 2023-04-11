@@ -23,22 +23,22 @@ class TranslationValuePolicy
 
     public function create(User $user): Response
     {
-        return Response::allow();
+        return Response::deny();
     }
 
     public function update(User $user, TranslationValue $translationValue): Response
     {
-        return Response::allow();
+        return Response::deny();
     }
 
     public function delete(User $user, TranslationValue $translationValue): Response
     {
-        return Response::allow();
+        return Response::deny();
     }
 
     public function restore(User $user, TranslationValue $translationValue): Response
     {
-        return Response::allow();
+        return Response::deny();
     }
 
     public function forceDelete(User $user, TranslationValue $translationValue): Response

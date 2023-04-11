@@ -26,52 +26,32 @@ class LaravelTranslationsFetch
         $this->scanForTranslations(
             collect($disk->allFiles())
         );
-        $this->updateTranslations();
-        $this->cleanOldTranslations();
+
+        $this->saveAsJson();
     }
 
     protected function scanForTranslations(Collection $files): void
     {
         $files->each(function ($file) use (&$array) {
-
             $pattern = "/__\((.+?)\)/m";
             $content = File::get(base_path("resources/views/$file"));
 
             if (preg_match_all($pattern, $content, $matches)) {
                 foreach ($matches[1] as $match) {
                     $match = trim($match, "'");
-                    if (! $this->translationKeys->has($match)) {
-                        $this->translationKeys->put($match, [$file]);
-                    } else {
-                        $this->translationKeys->put(
-                            $match,
-                            array_merge($this->translationKeys->get($match), [$file])
-                        );
-                    }
+                    $this->translationKeys->put($match, $match);
                 }
             }
         });
     }
 
-    protected function updateTranslations(): void
+    protected function saveAsJson(): void
     {
-        $this->translationKeys->each(function ($files, $key) {
-            Translation::withTrashed()->updateOrCreate([
-                'key' => $key,
-            ], [
-                'files' => $files,
-                'deleted_at' => null,
-            ]);
-        });
-    }
+        $disk = Storage::build([
+            'driver' => 'local',
+            'root' => base_path('lang/testing/json/lang'),
+        ]);
 
-    protected function cleanOldTranslations(): void
-    {
-        // compare the translation keys with the translation db and if the key is not in the translation keys, delete it from the db
-        $this->translationDB->each(function ($key) {
-            if (! $this->translationKeys->has($key)) {
-                Translation::where('key', $key)->delete();
-            }
-        });
+        $disk->put(config('translations.default_locale') . ".json", $this->translationKeys->sortKeys()->toJson(JSON_PRETTY_PRINT));
     }
 }
