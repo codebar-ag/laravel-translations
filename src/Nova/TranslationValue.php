@@ -25,9 +25,11 @@ class TranslationValue extends Resource
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('Translation', 'translation', Translation::class),
+            BelongsTo::make('Translation', 'translation', Translation::class)
+                ->readonly(),
 
             Select::make('Locale', 'locale')
+                ->filterable()
                 ->options(config('translations.locales')),
 
             Text::make('Value', 'value'),

@@ -6,6 +6,9 @@ use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
 use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsGenerateCommand;
 use CodebarAG\LaravelTranslations\Nova\Translation;
 use CodebarAG\LaravelTranslations\Nova\TranslationValue;
+use CodebarAG\LaravelTranslations\Policies\Nova\TranslationPolicy;
+use CodebarAG\LaravelTranslations\Policies\Nova\TranslationValuePolicy;
+use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -39,5 +42,10 @@ class LaravelTranslationsServiceProvider extends PackageServiceProvider
             Translation::class,
             TranslationValue::class,
         ]);
+
+        Nova::serving(function () {
+            Gate::policy(Translation::class, TranslationPolicy::class);
+            Gate::policy(TranslationValue::class, TranslationValuePolicy::class);
+        });
     }
 }

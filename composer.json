@@ -65,7 +65,7 @@
                 "CodebarAG\\LaravelTranslations\\LaravelTranslationsServiceProvider"
             ],
             "aliases": {
-                "LaravelTranslations": "CodebarAG\\LaravelTranslations\\Facades\\LaravelTranslations"
+                "LaravelTranslations": "LaravelTranslationsFetch"
             }
         }
     },

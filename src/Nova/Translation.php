@@ -3,6 +3,8 @@
 namespace CodebarAG\LaravelTranslations\Nova;
 
 use CodebarAG\LaravelTranslations\Models\Translation as TranslationModel;
+use CodebarAG\LaravelTranslations\Nova\Actions\TranslationsFetch;
+use CodebarAG\LaravelTranslations\Nova\Actions\TranslationsGenerate;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -26,7 +28,8 @@ class Translation extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Key', 'key'),
+            Text::make('Key', 'key')
+                ->readonly(),
 
             Number::make('Files Count', function () {
                 return count($this->files);
@@ -57,6 +60,9 @@ class Translation extends Resource
 
     public function actions(Request $request): array
     {
-        return [];
+        return [
+            (new TranslationsFetch)->standalone(),
+            (new TranslationsGenerate)->standalone(),
+        ];
     }
 }
