@@ -4,22 +4,30 @@ namespace CodebarAg\LaravelTranslations\Commands;
 
 use CodebarAg\LaravelTranslations\Facades\LaravelTranslationsFetch;
 use Illuminate\Console\Command;
-use Illuminate\Support\Collection;
 
 class LaravelTranslationsFetchCommand extends Command
 {
-    public Collection $translationKeys;
-
-    public Collection $translationDB;
-
-    public $signature = 'translations:fetch';
+    public $signature = 'translations:fetch {locale} {--f|force}';
 
     public $description = 'Get Laravel Translations from the view files';
 
     public function handle(): int
     {
-        LaravelTranslationsFetch::handle();
+        //check if locale.json exists allow --force
+        if(file_exists(base_path("lang/{$this->argument('locale')}.json")) && !$this->option('force')) {
+            if (! $this->confirm('This will overwrite "lang/'. $this->argument('locale'). '.json" Do you wish to continue?')) {
+                $this->warn('Command aborted');
+                return Command::FAILURE;
+            }
+        }
 
-        return true;
+        //test command
+
+
+        $count = LaravelTranslationsFetch::handle($this->argument('locale'));
+
+        $this->info("{$count} translations.");
+
+        return Command::SUCCESS;
     }
 }

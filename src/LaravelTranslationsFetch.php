@@ -2,7 +2,6 @@
 
 namespace CodebarAg\LaravelTranslations;
 
-use CodebarAg\LaravelTranslations\Models\Translation;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -10,33 +9,39 @@ use Illuminate\Support\Facades\Storage;
 class LaravelTranslationsFetch
 {
     public Collection $translationKeys;
+    public string $locale;
 
-    public Collection $translationDB;
-
-    public function handle(): void
+    public function __construct()
     {
-        $this->translationDB = Translation::all()->pluck('key');
         $this->translationKeys = collect();
+    }
+
+    public function handle(string $locale): int
+    {
+        $this->locale = $locale;
 
         $disk = Storage::build([
             'driver' => 'local',
-            'root' => config('translations.view_path'),
+            'root' => base_path(),
         ]);
 
-        $this->scanForTranslations(
-            collect($disk->allFiles())
-        );
+        foreach (config('translations.directories') as $directory) {
+            $this->scanForTranslations(
+                collect($disk->allFiles($directory))
+            );
+        }
 
         $this->saveAsJson();
+
+        return $this->translationKeys->count();
     }
 
     protected function scanForTranslations(Collection $files): void
     {
         $files->each(function ($file) use (&$array) {
-            $pattern = "/__\((.+?)\)/m";
-            $content = File::get(base_path("resources/views/$file"));
+            $content = File::get($file);
 
-            if (preg_match_all($pattern, $content, $matches)) {
+            if (preg_match_all(config('translations.pattern'), $content, $matches)) {
                 foreach ($matches[1] as $match) {
                     $match = trim($match, "'");
                     $this->translationKeys->put($match, $match);
@@ -49,9 +54,12 @@ class LaravelTranslationsFetch
     {
         $disk = Storage::build([
             'driver' => 'local',
-            'root' => base_path('lang/testing/json/lang'),
+            'root' => base_path('lang/'),
         ]);
 
-        $disk->put(config('translations.default_locale').'.json', $this->translationKeys->sortKeys()->toJson(JSON_PRETTY_PRINT));
+        $disk->put(
+            $this->locale.'.json',
+            $this->translationKeys->sortKeys()->toJson(JSON_PRETTY_PRINT)
+        );
     }
 }
