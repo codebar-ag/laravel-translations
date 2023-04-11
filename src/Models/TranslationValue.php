@@ -1,6 +1,6 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Models;
+namespace CodebarAg\LaravelTranslations\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

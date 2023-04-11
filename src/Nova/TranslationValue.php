@@ -1,8 +1,8 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Nova;
+namespace CodebarAg\LaravelTranslations\Nova;
 
-use CodebarAG\LaravelTranslations\Models\TranslationValue as TranslationValueModel;
+use CodebarAg\LaravelTranslations\Models\TranslationValue as TranslationValueModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
@@ -17,7 +17,7 @@ class TranslationValue extends Resource
     public static $title = 'id';
 
     public static $search = [
-        '',
+        'translation.name', 'locale', 'value',
     ];
 
     public function fields(Request $request): array

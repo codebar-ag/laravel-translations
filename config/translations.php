@@ -1,6 +1,6 @@
 <?php
 
-// config for CodebarAG/LaravelTranslations
+// config for CodebarAg/LaravelTranslations
 return [
     'default_locale' => 'en_GB',
 

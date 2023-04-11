@@ -1,8 +1,8 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Nova\Actions;
+namespace CodebarAg\LaravelTranslations\Nova\Actions;
 
-use CodebarAG\LaravelTranslations\Facades\LaravelTranslationsFetch;
+use CodebarAg\LaravelTranslations\Facades\LaravelTranslationsFetch;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;

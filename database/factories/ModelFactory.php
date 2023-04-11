@@ -1,6 +1,6 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Database\Factories;
+namespace CodebarAg\LaravelTranslations\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

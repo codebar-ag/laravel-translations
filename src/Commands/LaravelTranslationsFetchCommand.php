@@ -1,8 +1,8 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Commands;
+namespace CodebarAg\LaravelTranslations\Commands;
 
-use CodebarAG\LaravelTranslations\Models\Translation;
+use CodebarAg\LaravelTranslations\Models\Translation;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;

@@ -1,8 +1,8 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Tests;
+namespace CodebarAg\LaravelTranslations\Tests;
 
-use CodebarAG\LaravelTranslations\LaravelTranslationsServiceProvider;
+use CodebarAg\LaravelTranslations\LaravelTranslationsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'CodebarAG\\LaravelTranslations\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'CodebarAg\\LaravelTranslations\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

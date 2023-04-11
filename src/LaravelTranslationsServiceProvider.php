@@ -1,13 +1,13 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations;
+namespace CodebarAg\LaravelTranslations;
 
-use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
-use CodebarAG\LaravelTranslations\Commands\LaravelTranslationsGenerateCommand;
-use CodebarAG\LaravelTranslations\Nova\Translation;
-use CodebarAG\LaravelTranslations\Nova\TranslationValue;
-use CodebarAG\LaravelTranslations\Policies\Nova\TranslationPolicy;
-use CodebarAG\LaravelTranslations\Policies\Nova\TranslationValuePolicy;
+use CodebarAg\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
+use CodebarAg\LaravelTranslations\Commands\LaravelTranslationsGenerateCommand;
+use CodebarAg\LaravelTranslations\Nova\Translation;
+use CodebarAg\LaravelTranslations\Nova\TranslationValue;
+use CodebarAg\LaravelTranslations\Policies\Nova\TranslationPolicy;
+use CodebarAg\LaravelTranslations\Policies\Nova\TranslationValuePolicy;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Spatie\LaravelPackageTools\Package;
@@ -44,8 +44,8 @@ class LaravelTranslationsServiceProvider extends PackageServiceProvider
         ]);
 
         Nova::serving(function () {
-            Gate::policy(Translation::class, TranslationPolicy::class);
-            Gate::policy(TranslationValue::class, TranslationValuePolicy::class);
+            Gate::policy(Models\Translation::class, TranslationPolicy::class);
+            Gate::policy(Models\TranslationValue::class, TranslationValuePolicy::class);
         });
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Nova;
+namespace CodebarAg\LaravelTranslations\Nova;
 
-use CodebarAG\LaravelTranslations\Models\Translation as TranslationModel;
-use CodebarAG\LaravelTranslations\Nova\Actions\TranslationsFetch;
-use CodebarAG\LaravelTranslations\Nova\Actions\TranslationsGenerate;
+use CodebarAg\LaravelTranslations\Models\Translation as TranslationModel;
+use CodebarAg\LaravelTranslations\Nova\Actions\TranslationsFetch;
+use CodebarAg\LaravelTranslations\Nova\Actions\TranslationsGenerate;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
@@ -20,7 +20,7 @@ class Translation extends Resource
     public static $title = 'key';
 
     public static $search = [
-        '',
+        'key',
     ];
 
     public function fields(Request $request): array

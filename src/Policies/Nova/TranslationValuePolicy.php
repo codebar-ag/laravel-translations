@@ -1,9 +1,9 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Policies\Nova;
+namespace CodebarAg\LaravelTranslations\Policies\Nova;
 
 use App\Models\User;
-use CodebarAG\LaravelTranslations\Models\TranslationValue;
+use CodebarAg\LaravelTranslations\Models\TranslationValue;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
 

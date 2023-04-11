@@ -2,7 +2,7 @@
     "name": "codebar-ag/laravel-translations",
     "description": "This is my package laravel-translations",
     "keywords": [
-        "CodebarAG",
+        "CodebarAg",
         "laravel",
         "laravel-translations"
     ],
@@ -36,13 +36,13 @@
     },
     "autoload": {
         "psr-4": {
-            "CodebarAG\\LaravelTranslations\\": "src/",
-            "CodebarAG\\LaravelTranslations\\Database\\Factories\\": "database/factories/"
+            "CodebarAg\\LaravelTranslations\\": "src/",
+            "CodebarAg\\LaravelTranslations\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CodebarAG\\LaravelTranslations\\Tests\\": "tests/"
+            "CodebarAg\\LaravelTranslations\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -62,7 +62,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CodebarAG\\LaravelTranslations\\LaravelTranslationsServiceProvider"
+                "CodebarAg\\LaravelTranslations\\LaravelTranslationsServiceProvider"
             ],
             "aliases": {
                 "LaravelTranslations": "LaravelTranslationsFetch"

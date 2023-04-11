@@ -1,8 +1,8 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations;
+namespace CodebarAg\LaravelTranslations;
 
-use CodebarAG\LaravelTranslations\Models\TranslationValue;
+use CodebarAg\LaravelTranslations\Models\TranslationValue;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 

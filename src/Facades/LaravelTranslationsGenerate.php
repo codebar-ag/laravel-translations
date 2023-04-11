@@ -1,16 +1,16 @@
 <?php
 
-namespace CodebarAG\LaravelTranslations\Facades;
+namespace CodebarAg\LaravelTranslations\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \CodebarAG\LaravelTranslations\LaravelTranslationsFetch
+ * @see \CodebarAg\LaravelTranslations\LaravelTranslationsFetch
  */
 class LaravelTranslationsGenerate extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \CodebarAG\LaravelTranslations\LaravelTranslationsFetch::class;
+        return \CodebarAg\LaravelTranslations\LaravelTranslationsFetch::class;
     }
 }
