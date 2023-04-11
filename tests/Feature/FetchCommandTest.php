@@ -1,6 +1,5 @@
 <?php
 
-
 use CodebarAg\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
 use Illuminate\Support\Facades\Storage;
 

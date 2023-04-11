@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 class LaravelTranslationsFetch
 {
     public Collection $translationKeys;
+
     public string $locale;
 
     public function __construct()
