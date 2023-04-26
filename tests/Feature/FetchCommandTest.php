@@ -2,6 +2,7 @@
 
 use CodebarAg\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
 use Illuminate\Support\Facades\File;
+use function Pest\Laravel\artisan;
 
 test('can fetch translations', function () {
 
@@ -10,8 +11,8 @@ test('can fetch translations', function () {
 
     File::put("$fileName", $file);
 
-    \Pest\Laravel\artisan(LaravelTranslationsFetchCommand::class, [
+    artisan(LaravelTranslationsFetchCommand::class, [
         'locale' => 'de',
     ]);
 
-})->group('translations');
+})->group('translations')->to;

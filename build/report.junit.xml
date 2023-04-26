@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="1" assertions="0" errors="0" failures="0" skipped="0" time="0.017628">
-    <testsuite name="CodebarAG Test Suite" tests="1" assertions="0" errors="0" failures="0" skipped="0" time="0.017628">
-      <testsuite name="P\Tests\Feature\FetchCommandTest" file="/Users/sebastian/Projects/packages/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="0" errors="0" failures="0" skipped="0" time="0.017628">
-        <testcase name="__pest_evaluable_can_fetch_translations" file="/Users/sebastian/Projects/packages/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="23" class="P\Tests\Feature\FetchCommandTest" classname="P.Tests.Feature.FetchCommandTest" assertions="0" time="0.017628"/>
+  <testsuite name="" tests="2" assertions="3" errors="0" failures="1" skipped="0" time="0.088697">
+    <testsuite name="CodebarAG Test Suite" tests="2" assertions="3" errors="0" failures="1" skipped="0" time="0.088697">
+      <testsuite name="P\Tests\Feature\FetchCommandTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="0" errors="0" failures="0" skipped="0" time="0.053900">
+        <testcase name="__pest_evaluable_can_fetch_translations" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="23" class="P\Tests\Feature\FetchCommandTest" classname="P.Tests.Feature.FetchCommandTest" assertions="0" time="0.053900"/>
+      </testsuite>
+      <testsuite name="P\Tests\ArchTest" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" tests="1" assertions="3" errors="0" failures="1" skipped="0" time="0.034796">
+        <testcase name="__pest_evaluable_it_will_not_use_debugging_functions" file="/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(196) : eval()'d code" line="22" class="P\Tests\ArchTest" classname="P.Tests.ArchTest" assertions="3" time="0.034796">
+          <failure type="Pest\Arch\Exceptions\ArchExpectationFailedException">P\Tests\ArchTest::__pest_evaluable_it_will_not_use_debugging_functions
+Expecting 'ray' not to be used on 'CodebarAg\LaravelTranslations\LaravelTranslationsFetch'.
+
+/Users/rhyslees/Code/Codebar/laravel-translations/src/LaravelTranslationsFetch.php:24
+/Users/rhyslees/Code/Codebar/laravel-translations/tests/ArchTest.php:5
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest-plugin-arch/src/Blueprint.php:138
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest-plugin-arch/src/Expectations/ToOnlyBeUsedIn.php:42
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest-plugin-arch/src/SingleArchExpectation.php:128
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest-plugin-arch/src/GroupArchExpectation.php:115
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest-plugin-arch/src/GroupArchExpectation.php:106
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Expectations/EachExpectation.php:65
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Support/Reflection.php:41
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Support/HigherOrderMessage.php:59
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Support/HigherOrderMessageCollection.php:44
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php:98
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Concerns/Testable.php:302
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Support/ExceptionTrace.php:28
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Concerns/Testable.php:302
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Concerns/Testable.php:221
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/orchestra/testbench-core/src/TestCase.php:133
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/src/Kernel.php:86
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/bin/pest:91
+/Users/rhyslees/Code/Codebar/laravel-translations/vendor/pestphp/pest/bin/pest:99</failure>
+        </testcase>
       </testsuite>
     </testsuite>
   </testsuite>
