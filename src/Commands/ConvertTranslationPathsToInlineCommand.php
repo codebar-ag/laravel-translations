@@ -45,7 +45,7 @@ class ConvertTranslationPathsToInlineCommand extends Command
                     // Filter out translations that are not paths
                     if (
                         Str::containsAll($match, ['.', '/']) &&
-                        !Str::contains($match, ' ')
+                        ! Str::contains($match, ' ')
                     ) {
                         $trans = trans($match) != $match ? trans($match) : null;
 
