@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 
 class ConvertTranslationPathsToInlineCommand extends Command
 {
-    protected $signature = 'translation:convert';
+    protected $signature = 'translations:convert';
 
     protected $description = 'Command description';
 
