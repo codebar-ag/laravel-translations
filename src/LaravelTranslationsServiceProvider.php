@@ -3,6 +3,7 @@
 namespace CodebarAg\LaravelTranslations;
 
 use CodebarAg\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
+use CodebarAg\LaravelTranslations\Commands\ConvertTranslationPathsToInlineCommand
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,6 +19,9 @@ class LaravelTranslationsServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-translations')
             ->hasConfigFile()
-            ->hasCommand(LaravelTranslationsFetchCommand::class);
+            ->hasCommands(
+                LaravelTranslationsFetchCommand::class,
+                ConvertTranslationPathsToInlineCommand::class
+            );
     }
 }
