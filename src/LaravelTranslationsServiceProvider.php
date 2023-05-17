@@ -2,8 +2,8 @@
 
 namespace CodebarAg\LaravelTranslations;
 
-use CodebarAg\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
 use CodebarAg\LaravelTranslations\Commands\ConvertTranslationPathsToInlineCommand;
+use CodebarAg\LaravelTranslations\Commands\LaravelTranslationsFetchCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
