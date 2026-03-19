@@ -1,9 +1,11 @@
 # Laravel Translations
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebarag/laravel-translations.svg?style=flat-square)](https://packagist.org/packages/codebarag/laravel-translations)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/codebarag/laravel-translations/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/codebarag/laravel-translations/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/codebarag/laravel-translations/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/codebarag/laravel-translations/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/codebarag/laravel-translations.svg?style=flat-square)](https://packagist.org/packages/codebarag/laravel-translations)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/laravel-translations.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-translations)
+[![GitHub Tests](https://github.com/codebar-ag/larvel-translations/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/codebar-ag/larvel-translations/actions/workflows/run-tests.yml)
+[![GitHub Code Style](https://github.com/codebar-ag/larvel-translations/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/codebar-ag/larvel-translations/actions/workflows/fix-php-code-style-issues.yml)
+[![PHPStan](https://github.com/codebar-ag/larvel-translations/actions/workflows/phpstan.yml/badge.svg?branch=main)](https://github.com/codebar-ag/larvel-translations/actions/workflows/phpstan.yml)
+[![Dependency Review](https://github.com/codebar-ag/larvel-translations/actions/workflows/dependency-review.yml/badge.svg?branch=main)](https://github.com/codebar-ag/larvel-translations/actions/workflows/dependency-review.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-translations.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-translations)
 
 `laravel-translations` scans your application source files for `__()` translation keys and creates JSON language files. It also includes a conversion command that can replace path-based keys with their resolved inline text.
 
@@ -18,7 +20,7 @@
 You can install the package via composer:
 
 ```bash
-composer require codebarag/laravel-translations
+composer require codebar-ag/laravel-translations
 ```
 
 You can publish the config file with:
