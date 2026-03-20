@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": "8.5.*",
+        "php": "8.4.*||8.5.*",
         "guzzlehttp/guzzle": "^7.10",
         "illuminate/contracts": "^13.0",
         "nesbot/carbon": "^3.11",
