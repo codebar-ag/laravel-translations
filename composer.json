@@ -11,9 +11,10 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Rhys Lees",
-            "email": "43909932+RhysLees@users.noreply.github.com",
-            "role": "Developer"
+            "name": "Sebastian Bürgin-Fix",
+            "email": "helpdesk@codebar.ch",
+            "homepage": "https://www.codebar.ch",
+            "role": "Software-Engineer"
         }
     ],
     "require": {
