@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "8.4.*||8.5.*",
-        "guzzlehttp/guzzle": "^7.10",
+        "guzzlehttp/guzzle": "^8.1",
         "illuminate/contracts": "^13.0",
         "nesbot/carbon": "^3.11",
         "spatie/laravel-package-tools": "^1.93"
