@@ -19,6 +19,7 @@ class ConvertTranslationPathsToInlineCommand extends Command
         $disk = Storage::build([
             'driver' => 'local',
             'root' => base_path(),
+            'links' => 'skip',
         ]);
 
         $directories = config('translations.directories', []);

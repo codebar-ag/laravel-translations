@@ -24,6 +24,7 @@ class LaravelTranslationsFetch
         $disk = Storage::build([
             'driver' => 'local',
             'root' => base_path(),
+            'links' => 'skip',
         ]);
 
         foreach (config('translations.directories', []) as $directory) {

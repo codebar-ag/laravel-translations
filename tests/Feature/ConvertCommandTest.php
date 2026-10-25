@@ -66,3 +66,26 @@ test('it fails when directories are not configured', function () {
 
     artisan('translations:convert')->assertFailed();
 });
+
+test('it does not follow symbolic links', function () {
+    Lang::addLines([
+        'auth.login' => 'Sign in',
+    ], 'en');
+
+    File::ensureDirectoryExists(base_path('tmp/translations-convert-outside'));
+    File::put(base_path('tmp/translations-convert-outside/linked.php'), "<?php __('auth.login');");
+    File::put(base_path('tmp/translations-convert/example.php'), "<?php __('auth.login');");
+
+    symlink(base_path('tmp/translations-convert-outside/linked.php'), base_path('tmp/translations-convert/linked.php'));
+
+    config()->set('translations.directories', ['tmp/translations-convert']);
+
+    try {
+        artisan('translations:convert')->assertSuccessful();
+
+        expect(File::get(base_path('tmp/translations-convert/example.php')))->toContain("__('Sign in');")
+            ->and(File::get(base_path('tmp/translations-convert-outside/linked.php')))->toContain("__('auth.login');");
+    } finally {
+        File::deleteDirectory(base_path('tmp/translations-convert-outside'));
+    }
+});
