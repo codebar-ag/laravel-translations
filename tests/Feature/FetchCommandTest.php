@@ -83,3 +83,24 @@ test('it skips symbolic links in scanned directories', function () {
         'Hello World' => 'Hello World',
     ]);
 });
+
+test('it keeps keys from files where the pattern hits the backtrack limit', function () {
+    File::put(
+        base_path('tmp/translations-fetch/example.php'),
+        "<?php\n\n__('Hello World');\n__('".str_repeat('\\', 40)."x\n__(\"auth.login\");\n"
+    );
+
+    config()->set('translations.directories', ['tmp/translations-fetch']);
+
+    artisan('translations:fetch', [
+        'locale' => 'de',
+        '--force' => true,
+    ])->assertSuccessful();
+
+    $content = json_decode(File::get(base_path('lang/de.json')), true, 512, JSON_THROW_ON_ERROR);
+
+    expect($content)->toBe([
+        'Hello World' => 'Hello World',
+        'auth.login' => 'auth.login',
+    ]);
+});

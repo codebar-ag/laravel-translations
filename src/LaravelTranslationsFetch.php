@@ -45,16 +45,36 @@ class LaravelTranslationsFetch
         $files->each(function (string $file) use ($pattern) {
             $content = File::get(base_path($file));
 
-            if (preg_match_all($pattern, $content, $matches)) {
-                foreach (($matches['key'] ?? []) as $match) {
-                    if ($match === '') {
-                        continue;
-                    }
-
-                    $this->translationKeys->put(stripslashes($match), stripslashes($match));
+            foreach ($this->matchTranslationKeys($pattern, $content) as $match) {
+                if ($match === '') {
+                    continue;
                 }
+
+                $this->translationKeys->put(stripslashes($match), stripslashes($match));
             }
         });
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    protected function matchTranslationKeys(string $pattern, string $content): array
+    {
+        if (preg_match_all($pattern, $content, $matches) !== false) {
+            return $matches['key'] ?? [];
+        }
+
+        // The pattern ran into a PCRE limit (e.g. a very long unterminated string).
+        // Retry line by line so one problematic line does not drop every key in the file.
+        $keys = [];
+
+        foreach (preg_split('/\R/', $content) ?: [] as $line) {
+            if (preg_match_all($pattern, $line, $lineMatches)) {
+                array_push($keys, ...($lineMatches['key'] ?? []));
+            }
+        }
+
+        return $keys;
     }
 
     protected function saveAsJson(): void
