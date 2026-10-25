@@ -89,3 +89,41 @@ test('it does not follow symbolic links', function () {
         File::deleteDirectory(base_path('tmp/translations-convert-outside'));
     }
 });
+
+test('it converts files containing long runs of backslashes in a string', function () {
+    Lang::addLines([
+        'auth.login' => 'Sign in',
+    ], 'en');
+
+    File::put(
+        base_path('tmp/translations-convert/example.php'),
+        "<?php\n\n__('auth.login');\n__('".str_repeat('\\', 40)."' . \$suffix);\n"
+    );
+
+    config()->set('translations.directories', ['tmp/translations-convert']);
+
+    artisan('translations:convert')->assertSuccessful();
+
+    expect(File::get(base_path('tmp/translations-convert/example.php')))
+        ->toContain("__('Sign in');")
+        ->not->toContain("__('auth.login');");
+});
+
+test('it keeps escaped quotes and arguments when converting', function () {
+    Lang::addLines([
+        'auth.welcome' => "It's :name",
+    ], 'en');
+
+    File::put(
+        base_path('tmp/translations-convert/example.php'),
+        "<?php\n\n__('auth.welcome', ['name' => \$name]);\n__('It\\'s.fine');\n"
+    );
+
+    config()->set('translations.directories', ['tmp/translations-convert']);
+
+    artisan('translations:convert')->assertSuccessful();
+
+    expect(File::get(base_path('tmp/translations-convert/example.php')))
+        ->toContain("__('It\\'s :name', ['name' => \$name]);")
+        ->toContain("__('It\\'s.fine');");
+});

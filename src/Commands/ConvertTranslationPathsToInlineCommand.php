@@ -51,7 +51,7 @@ class ConvertTranslationPathsToInlineCommand extends Command
             $didChange = false;
 
             $updatedContent = preg_replace_callback(
-                '/__\(\s*([\'"])(?<key>(?:\\\\.|(?!\1).)*)\1(?<rest>\s*(?:,\s*[^)]*)?)\)/',
+                '/__\(\s*([\'"])(?<key>(?:\\\\.|(?!\1)[^\\\\\n])*+)\1(?<rest>\s*(?:,\s*[^)]*)?)\)/',
                 function (array $match) use ($file, &$didChange): string {
                     $key = stripslashes($match['key']);
                     if (! $this->isLikelyTranslationPath($key)) {
