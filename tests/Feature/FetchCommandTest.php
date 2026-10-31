@@ -57,3 +57,50 @@ test('it fails when no scan directories are configured', function () {
         'locale' => 'de',
     ])->assertFailed();
 });
+
+test('it skips symbolic links in scanned directories', function () {
+    File::ensureDirectoryExists(base_path('tmp/translations-fetch-outside'));
+    File::put(base_path('tmp/translations-fetch-outside/linked.php'), "<?php __('Linked');");
+    File::put(base_path('tmp/translations-fetch/example.php'), "<?php __('Hello World');");
+
+    symlink(base_path('tmp/translations-fetch-outside/linked.php'), base_path('tmp/translations-fetch/linked.php'));
+    symlink(base_path('tmp/translations-fetch-outside'), base_path('tmp/translations-fetch/linked-dir'));
+
+    config()->set('translations.directories', ['tmp/translations-fetch']);
+
+    try {
+        artisan('translations:fetch', [
+            'locale' => 'de',
+            '--force' => true,
+        ])->assertSuccessful();
+    } finally {
+        File::deleteDirectory(base_path('tmp/translations-fetch-outside'));
+    }
+
+    $content = json_decode(File::get(base_path('lang/de.json')), true, 512, JSON_THROW_ON_ERROR);
+
+    expect($content)->toBe([
+        'Hello World' => 'Hello World',
+    ]);
+});
+
+test('it keeps keys from files where the pattern hits the backtrack limit', function () {
+    File::put(
+        base_path('tmp/translations-fetch/example.php'),
+        "<?php\n\n__('Hello World');\n__('".str_repeat('\\', 40)."x\n__(\"auth.login\");\n"
+    );
+
+    config()->set('translations.directories', ['tmp/translations-fetch']);
+
+    artisan('translations:fetch', [
+        'locale' => 'de',
+        '--force' => true,
+    ])->assertSuccessful();
+
+    $content = json_decode(File::get(base_path('lang/de.json')), true, 512, JSON_THROW_ON_ERROR);
+
+    expect($content)->toBe([
+        'Hello World' => 'Hello World',
+        'auth.login' => 'auth.login',
+    ]);
+});

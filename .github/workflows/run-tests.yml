@@ -30,7 +30,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ ubuntu-latest ]
-        php: [ 8.5 ]
+        php: [ 8.4, 8.5 ]
         laravel: [ 13.* ]
         stability: [ prefer-lowest, prefer-stable ]
 
@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7.0.1
 
       - name: Setup PHP
         uses: shivammathur/setup-php@2.40.0
